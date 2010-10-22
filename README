@@ -1,0 +1,5 @@
+Taggy is a command-line ID3 tag editor for various audio files.
+
+It is designed to be able to infer the various fields from folder names and file names, as well as to be able to grab useful data from cddb (maybe musicbrainz, eventually).  Taggy uses mutagen as its library; and is written in python.
+
+Unfortunately, at this time, Taggy does NOTHING.  It is a virtually empty file that accomplishes nothing beyond existing.
