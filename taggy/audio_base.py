@@ -1,4 +1,4 @@
-class audio_base:
+class TaggyBase:
     """Base class to be inherited by other audio types (e.g. mp3 or flac types).
 
     Includes a number of methods to be overwritten by inheriting classes:
