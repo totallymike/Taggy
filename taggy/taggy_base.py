@@ -30,9 +30,9 @@ class TaggyBase:
     
     def set_raw_tag():
         raise NotImplementedError("Function undefined.")
-    def get_tags():
+    def print_tags():
         raise NotImplementedError("Function undefined.")
-    def get_tags_raw():
+    def print_tags_raw():
         raise NotImplementedError("Function undefined.")
     def clear_tags():
         raise NotImplementedError("Function undefined.")
