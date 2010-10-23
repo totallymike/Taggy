@@ -13,8 +13,6 @@ class TaggyBase:
         for ID3 format.
     clear_tags():
         Delete all tags and metadata from the file.
-    set_raw_tag(tag, value):
-        Define given raw tag (e.g. TIT2 for ID3) with value.
     set_title(value):
     set_album(value):
     set_artist(value):
@@ -28,8 +26,6 @@ class TaggyBase:
         """Establishes the filename"""
         self.file_name = file_path
     
-    def set_raw_tag():
-        raise NotImplementedError("Function undefined.")
     def print_tags():
         raise NotImplementedError("Function undefined.")
     def print_tags_raw():
