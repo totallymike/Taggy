@@ -27,22 +27,36 @@ class TaggyBase:
         self.file_name = file_path
     
     def print_tags():
-        raise NotImplementedError("Function undefined.")
+        pass
     def print_tags_raw():
-        raise NotImplementedError("Function undefined.")
+        pass
     def clear_tags():
-        raise NotImplementedError("Function undefined.")
+        pass
     def set_title():
-        raise NotImplementedError("Function undefined.")
+        pass
+    def get_title():
+        pass
     def set_album():
-        raise NotImplementedError("Function undefined.")
+        pass
+    def get_album():
+        pass
     def set_artist():
-        raise NotImplementedError("Function undefined.")
+        pass
+    def get_artist():
+        pass
     def set_album_artist():
-        raise NotImplementedError("Function undefined.")
+        pass
+    def get_album_artist():
+        pass
     def set_genre():
-        raise NotImplementedError("Function undefined.")
+        pass
+    def get_genre():
+        pass
     def set_track_number():
-        raise NotImplementedError("Function undefined.")
+        pass
+    def get_track_number():
+        pass
     def set_year():
-        raise NotImplementedError("Function undefined.")
+        pass
+    def get_year():
+        pass;

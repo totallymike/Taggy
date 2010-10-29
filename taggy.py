@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # A command-line ID3 tagger for various audio file formats.  Extremely incomplete.
 
+import sys
 import os.path
 from glob import glob
 from optparse import OptionParser
@@ -17,7 +18,16 @@ def main():
                       help="list tags embedded in a file", dest="command", default=False)
     (options, args) = parser.parse_args()
 
+    files = []
+    for item in args:
+        if os.path.exists(item):
+            files.append(item)
+        else:
+            print "File " + item + " not found."
+            sys.exit(1)
     
+    
+
     
 if __name__ == "__main__":
     main()
