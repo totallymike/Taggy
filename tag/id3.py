@@ -31,9 +31,9 @@ class ID3(Base):
         except IOError:
             print "File " + file_path + " not found.  Exiting."
             sys.exit(1)
-        base.__init__(self, file_path)
+        Base.__init__(self, file_path)
 
-    def print_tags():
+    def print_tags(self):
         """Print id3 tags in plain english.  One per line."""
         for tag in self.audio:
             if tag in _tag_types:
@@ -48,11 +48,11 @@ class ID3(Base):
             except UnicodeEncodeError:
                 print "Error printing tag"
     
-    def print_tags_raw():
+    def print_tags_raw(self):
         """Print raw id3 tags.  One per line."""
         print self.audio.pprint()
     
-    def clear_tags():
+    def clear_tags(self):
         """Remove all tagging and metadata from a file."""
         self.audio.clear()
         self.audio.save()

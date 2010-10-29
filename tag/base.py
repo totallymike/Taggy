@@ -26,37 +26,37 @@ class Base:
         """Establishes the filename"""
         self.file_name = file_path
     
-    def print_tags():
+    def print_tags(self):
         pass
-    def print_tags_raw():
+    def print_tags_raw(self):
         pass
-    def clear_tags():
+    def clear_tags(self):
         pass
-    def set_title():
+    def set_title(self):
         pass
-    def get_title():
+    def get_title(self):
         pass
-    def set_album():
+    def set_album(self):
         pass
-    def get_album():
+    def get_album(self):
         pass
-    def set_artist():
+    def set_artist(self):
         pass
-    def get_artist():
+    def get_artist(self):
         pass
-    def set_album_artist():
+    def set_album_artist(self):
         pass
-    def get_album_artist():
+    def get_album_artist(self):
         pass
-    def set_genre():
+    def set_genre(self):
         pass
-    def get_genre():
+    def get_genre(self):
         pass
-    def set_track_number():
+    def set_track_number(self):
         pass
-    def get_track_number():
+    def get_track_number(self):
         pass
-    def set_year():
+    def set_year(self):
         pass
-    def get_year():
+    def get_year(self):
         pass;

@@ -10,8 +10,16 @@ from optparse import OptionParser
 
 def list(options, files):
     """List the files."""
-    if options.raw:
-        
+    for audio_file in files:
+        if options.raw:
+            audio_file.print_tags_raw()
+        else:
+            audio_file.print_tags()
+
+commands = {
+    'list' : list
+}
+
 def main():
 
 ## Option parsing.
@@ -26,12 +34,18 @@ def main():
     files = []
     for item in args:
         if os.path.exists(item):
-            files.append(item)
+            (root, ext) = os.path.splitext(item)
+            if ext.lower() == '.mp3':
+                audio_file = ID3(item)
+                files.append(audio_file)
+            else:
+                sys.stdout.write('Cannot determine filetype: ')
+                print item
         else:
             print "File " + item + " not found."
             sys.exit(1)
     
-    options.command(options, files)
+    commands[options.command](options, files)
 
     
 if __name__ == "__main__":
