@@ -26,7 +26,7 @@ def main():
             print "File " + item + " not found."
             sys.exit(1)
     
-    
+    command(options, args)
 
     
 if __name__ == "__main__":

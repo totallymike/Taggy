@@ -1,7 +1,7 @@
 import sys
 from mutagen.mp3 import MP3
 from mutagen import id3
-from taggy.taggy_base import TaggyBase
+from tag import Base
 
 _tag_types = {
     'TIT2': 'Title',
@@ -13,7 +13,7 @@ _tag_types = {
     'TPOS': 'Disc'
 }
 
-class TaggyMp3(TaggyBase):
+class ID3(Base):
     """Class for dealing with tags in MP3 files.
 
     Inherits its primary functions from audio_base; the basic
@@ -31,7 +31,7 @@ class TaggyMp3(TaggyBase):
         except IOError:
             print "File " + file_path + " not found.  Exiting."
             sys.exit(1)
-        TaggyBase.__init__(self, file_path)
+        base.__init__(self, file_path)
 
     def print_tags():
         """Print id3 tags in plain english.  One per line."""
