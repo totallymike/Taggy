@@ -11,6 +11,10 @@ _tag_types = {
     'TRCK': 'Track Number',
     'TCON': 'Genre',
     'TPOS': 'Disc',
+    'TSSE': 'Encoder',
+    'TCOM': 'Composer',
+    'TDRC': 'Release',
+    'TPUB': 'Publisher',
 }
 
 class ID3(Base):
@@ -34,6 +38,7 @@ class ID3(Base):
         Base.__init__(self, file_path)
 
     def print_tags(self, verbose=False):
+#        import pdb; pdb.set_trace()
         """Print id3 tags in plain english.  One per line."""
         for tag in self.audio:
             if tag in _tag_types:
@@ -43,7 +48,6 @@ class ID3(Base):
             elif verbose:
                 if tag.startswith('PRIV'):
                     print 'PRIV: ' + self.audio[tag].owner
-                    print self.audio[tag].data
                 else:
                     sys.stdout.write(tag + ': ')
                     print self.audio[tag]
