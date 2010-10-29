@@ -14,8 +14,12 @@ def list(options, files):
         if options.raw:
             audio_file.print_tags_raw()
         else:
-            audio_file.print_tags()
+            audio_file.print_tags(options.verbose)
 
+def clear(options, files):
+    """Clear all metadata from a file"""
+    for audio_file in files:
+        audio_file.clear()
 commands = {
     'list' : list
 }
@@ -27,7 +31,12 @@ def main():
     parser = OptionParser(usage=usage)
     parser.add_option("-l", "--list", action="store_const", const="list",
                       help="list tags embedded in a file", dest="command")
-    parser.add_option('-r', '--raw', action="store_true", dest='raw', default=False)
+    parser.add_option('-r', '--raw', action="store_true", dest='raw', 
+                      help='For --list, print raw tags.', default=False)
+    parser.add_option('-v', '--verbose', action='store_true', dest='verbose', default=False,
+                      help='Verbose output.  In the case of list, print all other tags.')
+    parser.add_option('-C', '--clear', action='store_const', const='clear',
+                      help='Clear all tags and metadata froma file.', dest='command')
     (options, args) = parser.parse_args()
 
     # Generate files list.

@@ -10,7 +10,7 @@ _tag_types = {
     'TPE1': 'Artist',
     'TRCK': 'Track Number',
     'TCON': 'Genre',
-    'TPOS': 'Disc'
+    'TPOS': 'Disc',
 }
 
 class ID3(Base):
@@ -33,20 +33,20 @@ class ID3(Base):
             sys.exit(1)
         Base.__init__(self, file_path)
 
-    def print_tags(self):
+    def print_tags(self, verbose=False):
         """Print id3 tags in plain english.  One per line."""
         for tag in self.audio:
             if tag in _tag_types:
                 # stdout.write to suppress newline.
                 sys.stdout.write(_tag_types[tag] + ': ')
-            else:
-                sys.stdout.write(tag + ': ')
-            try:
-                # Mutagen has great methods of printing tag objects already.
-                # Easier to use those than try to catch each type and print it.1
                 print self.audio[tag]
-            except UnicodeEncodeError:
-                print "Error printing tag"
+            elif verbose:
+                if tag.startswith('PRIV'):
+                    print 'PRIV: ' + self.audio[tag].owner
+                    print self.audio[tag].data
+                else:
+                    sys.stdout.write(tag + ': ')
+                    print self.audio[tag]
     
     def print_tags_raw(self):
         """Print raw id3 tags.  One per line."""
